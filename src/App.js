@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import SearchBar from './components/SearchBar';
+import ChartArea from './components/ChartArea';
+import InfoArea from './components/InfoArea';
+import { useState } from 'react';
 
 function App() {
+  const [symbol, setSymbol] = useState('AAPL')
+  const [updateData, setUpdateData] = useState(null)
+  
+  console.log(symbol)
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchBar setSymbol={setSymbol} />
+      <div className="page">
+        <ChartArea setUpdateData={setUpdateData} symbol={symbol} />
+        <InfoArea updateData={updateData} symbol={symbol} />
+      </div>
     </div>
   );
 }
