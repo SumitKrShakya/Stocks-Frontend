@@ -139,18 +139,18 @@ const ChartArea = ({ symbol, setUpdateData }) => {
     };
     newData.datasets[0].data = responseData;
     setData(newData);
-    newData.datasets[0].data = responseVolume;
-    setDataVolume(newData);
-    newData.datasets[0].data = responseOpen;
-    newData.datasets.push({
-      label: "My First Dataset",
-      data: [65, 59, 80, 81, 56, 55, 40],
-      fill: true,
-      borderColor: "rgb(75, 192, 192)",
-      tension: 0.1,
-    })
-    newData.datasets[1].data = responseClose;
-    setDataBar(newData);
+    // newData.datasets[0].data = responseVolume;
+    // setDataVolume(newData);
+    // newData.datasets[0].data = responseOpen;
+    // newData.datasets.push({
+    //   label: "My First Dataset",
+    //   data: [65, 59, 80, 81, 56, 55, 40],
+    //   fill: true,
+    //   borderColor: "rgb(75, 192, 192)",
+    //   tension: 0.1,
+    // })
+    // newData.datasets[1].data = responseClose;
+    // setDataBar(newData);
     setUpdateData(newData)
 
   };
@@ -164,7 +164,7 @@ const ChartArea = ({ symbol, setUpdateData }) => {
         <button onClick={()=>handleChangeRange("5y")}>5 Year</button>
       </div>
       <div className="chart">
-        <ChartRender />
+        <ChartRender data={data} options={options} />
         <Line data={data} options={options} />
       </div>
       <div className="chart">
