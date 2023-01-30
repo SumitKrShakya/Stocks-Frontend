@@ -1,4 +1,4 @@
-export const host = "http://localhost:4000";
+export const host = "https://stocks-nlge.onrender.com";
 
 export const searchRoute = `${host}/search`;
 export const chartDataRoute = `${host}/chart/data`;
